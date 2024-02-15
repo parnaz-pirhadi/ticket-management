@@ -9,7 +9,7 @@ mock.onPost('/api/saveTicket').reply((config) => {
     const newTicket = JSON.parse(config.data);
 
     const existingData = getValueFromLocalStorage();
-    const mergedData = [newTicket, ...existingData];
+    const mergedData = [newTicket, ...(existingData || [])];
     setValueInLocalStorage(mergedData);
     return [200, newTicket];
 });
