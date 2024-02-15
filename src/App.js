@@ -1,16 +1,14 @@
 import React from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import Tickets from "./pages/Tickets";
+import {QueryClient, QueryClientProvider} from 'react-query';
+import "./styles/App.scss";
+import Router from "./component/Router";
 
 const queryClient = new QueryClient();
 
 function App() {
     return (
         <QueryClientProvider client={queryClient}>
-            <div>
-                <h1>Ticket Management System</h1>
-                <Tickets />
-            </div>
+            <Router/>
         </QueryClientProvider>
     );
 }
